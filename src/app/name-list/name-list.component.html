@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="form-card">
+        <h3 class="text-center mb-4">Select a User</h3>
+
+        <div class="form-group mb-4">
+          <label for="userSelect" class="form-label">Choose User:</label>
+          <select id="userSelect" class="form-select" (change)="onSelect($event)" aria-label="Select User">
+            <option value="" disabled selected>Select User</option>
+            <option *ngFor="let user of users" [value]="user.id">
+              {{ user.name | titlecase }}
+            </option>
+          </select>
+        </div>
+
+        <div class="user-details" *ngIf="selectedUserId !== null">
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Update Name:</label>
+            <input
+              id="nameInput"
+              type="text"
+              class="form-control"
+              [value]="selectedUserName"
+              (input)="onNameChange($event)"
+              placeholder="Enter new name"
+            />
+          </div>
+          <div class="button-group d-flex justify-content-between">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="onSaveName()"
+            >
+              Save Name
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="onViewDashboard()"
+            >
+              View Dashboard
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container mt-4" *ngIf="user">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-body text-center">
+          <h2 class="mb-4">Dashboard</h2>
+          <div class="profile mb-3">
+            <img
+              [src]="user.profilePicture"
+              [alt]="user.name + ' Profile Picture'"
+              class="img-thumbnail profile-pic"
+            />
+          </div>
+          <h3 class="mb-3">{{ user.name }}</h3>
+          <input
+            type="text"
+            class="form-control mb-3"
+            placeholder="Search user by name"
+            (input)="onSearch($event)"
+          />
+          <h4 class="mb-3">Latest Modified Users</h4>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              *ngFor="let modifiedUser of latestModifiedUsers"
+            >
+              {{ modifiedUser.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4" *ngIf="!user">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 text-center">
+      <div class="alert alert-warning" role="alert">
+        <h2 class="mb-4">User not found</h2>
+        <p>Please select a valid user from the name list.</p>
+      </div>
+    </div>
+  </div>
+</div>

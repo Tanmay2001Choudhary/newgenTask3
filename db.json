@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Hello",
+      "profilePicture": "https://images.unsplash.com/photo-1719937206589-d13b6b008196?q=80&w=1935&auto=format&fit=crop"
+    },
+    {
+      "id": "2",
+      "name": "Tanmay",
+      "profilePicture": "https://images.unsplash.com/photo-1523307730650-594bc63f9d67?q=80&w=2127&auto=format&fit=crop"
+    },
+    {
+      "id": "3",
+      "name": "Charlie",
+      "profilePicture": "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?q=80&w=1930&auto=format&fit=crop"
+    }
+  ]
+}
